@@ -7,7 +7,8 @@ describe "GithubService" do
   end
 
   it 'gets profile info' do
-    github_user = GithubService.find_user(user)
-    expect(profile[:name]).to eq("Dan Broadbent")
+    current_user = create(:user)
+    github_user = GithubService.find_user(current_user)
+    expect(github_user[:name]).to eq("Dan Broadbent")
   end
 end
