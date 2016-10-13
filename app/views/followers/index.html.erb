@@ -1,6 +1,6 @@
 <h1>Followers</h1>
 <ul>
   <% @followers.each do |follower| %>
-  <li><%= follower.attrs[:login] %></li>
+  <li><%= link_to follower.attrs[:login], "/user/#{follower.attrs[:login]}" %></li>
   <% end %>
 </ul>
