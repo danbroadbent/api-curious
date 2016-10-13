@@ -12,11 +12,16 @@
 </head>
 
 <body>
+  <div class="row">
+  <div class="large-1 columns"></div>
+  <div class="large-11 columns">
+<div class="row">
   <div class="top-bar">
     <div class="top-bar-title">
       <span data-responsive-toggle="responsive-menu" data-hide-for="medium">
         <button class="menu-icon dark" type="button" data-toggle></button>
       </span>
+      <img src="https://camo.githubusercontent.com/1f913cb7a82c253c105fc923a8bf6eae1046fa7f/68747470733a2f2f7261772e6769746875622e636f6d2f6769746875622f6d656469612f6d61737465722f6f63746f636174732f626c61636b746f6361742d33322e706e67" alt="" />
       <strong>GitHub Browse</strong>
     </div>
     <div id="responsive-menu">
@@ -41,8 +46,10 @@
         <ul class="menu">
           <li>
             <% if current_user %>
-            Hello, <%= current_user.name %>
-            <%= button_to "Logout", logout_path, method: :delete %>
+            Hello, <%= current_user.name %> </br>
+          </li>
+          <li>
+            <%= button_to "Logout", logout_path, method: :delete, class: 'hollow button'  %>
             <% else %>
             <%= button_to "Login with Github", github_login_path %>
             <% end %>
@@ -51,7 +58,8 @@
         </div>
       </div>
     </div>
-
+  </div>
+</div>
     <%= yield %>
 
   </body>
