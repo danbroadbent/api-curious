@@ -1,0 +1,6 @@
+<h1>My Recent Activity</h1>
+<ul>
+  <% @events.each do |event| %>
+  <li><%= event.attrs[:type].gsub("Event", "") %> in <%= event.attrs[:repo][:name] %></li>
+  <% end %>
+</ul>
