@@ -5,5 +5,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/user/:id/followers', to: 'followers#index'
   get '/user/:id/following', to: 'following#index'
+  get '/user/:id/repositories', to: 'repositories#index'
   get "/user/:id", to: 'github_users#show'
 end
