@@ -12,7 +12,11 @@ class GithubService
   def self.followers(username, oauth_token)
     response = conn.get "/users/#{username}/followers", { :access_token => oauth_token }
     JSON.parse(response.body, symbolize_names: true)
+  end
 
+  def self.followings(username, oauth_token)
+    response = conn.get "/users/#{username}/following", { :access_token => oauth_token }
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.conn

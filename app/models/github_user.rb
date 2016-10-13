@@ -20,4 +20,10 @@ class GithubUser
       GithubUser.new(raw_follower)
     end
   end
+
+  def self.followings(username, oauth_token)
+    GithubService.followings(username, oauth_token).map do |raw_following|
+      GithubUser.new(raw_following)
+    end
+  end
 end
