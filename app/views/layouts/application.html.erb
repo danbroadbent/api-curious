@@ -29,7 +29,12 @@
             <% else %>
             <% end %>
           </li>
-          <li><a href="#">Three</a></li>
+          <li>
+            <% if current_user %>
+            <%= link_to "Following Feed", "/user/#{current_user.username}/received_events" %>
+            <% else %>
+            <% end %>
+          </li>
         </ul>
       </div>
       <div class="top-bar-right">

@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   get '/user/:id/following', to: 'following#index'
   get '/user/:id/repositories', to: 'repositories#index'
   get '/user/:id/events', to: 'events#index'
+  get '/user/:id/received_events', to: 'received_events#index'
   get "/user/:id", to: 'github_users#show'
 end
