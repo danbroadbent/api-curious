@@ -1,0 +1,10 @@
+<h1>Users I Follow Activity</h1>
+<ul>
+  <% @events.each do |event| %>
+  <li>
+    <%= event.attrs[:type].gsub("Event", "") %> in
+    <%= event.attrs[:repo][:name] %> by
+    <%= link_to event.attrs[:actor][:login], "/user/#{event.attrs[:actor][:login]}"%>
+  </li>
+  <% end %>
+</ul>

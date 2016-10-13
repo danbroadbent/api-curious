@@ -1,0 +1,6 @@
+<h1>Repositories</h1>
+<ul>
+  <% @repositories.each do |repository| %>
+  <li><%= link_to repository.attrs[:name], repository.attrs[:html_url] %></li>
+  <% end %>
+</ul>
