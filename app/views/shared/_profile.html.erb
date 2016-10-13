@@ -1,9 +1,10 @@
 <% if current_user %>
-<img src="<%= @user.attrs[:avatar_url] %>" alt="<%= @user.attrs[:name]%>'s Profile Image'" />
-<h2><%= @user.attrs[:name] %></h2>
-<h3><%= link_to "Followers", "/user/#{@user.attrs[:login]}/followers" %>  <%= @user.attrs[:followers] %></h3>
-<h3><%= link_to "Following", "/user/#{@user.attrs[:login]}/following" %>  <%= @user.attrs[:following] %></h3>
-<h3><%= link_to "Repositories", "/user/#{@user.attrs[:login]}/repositories" %> </h3>
+<div class="row">
+  <div class="small-6 large-6 columns"><img src="<%= @user.attrs[:avatar_url] %>" alt="<%= @user.attrs[:name]%>'s Profile Image'" /><h2><%= @user.attrs[:name] %></h2></div>
+  <div class="small-6 large-6 columns"><h3><%= link_to "Followers", "/user/#{@user.attrs[:login]}/followers" %>  <%= @user.attrs[:followers] %></h3>
+  <h3><%= link_to "Following", "/user/#{@user.attrs[:login]}/following" %>  <%= @user.attrs[:following] %></h3>
+  <h3><%= link_to "Repositories", "/user/#{@user.attrs[:login]}/repositories" %> </h3></div>
+</div>
 <% else %>
 <h1>Login with GitHub to see your Dashboard</h1>
 <% end %>
