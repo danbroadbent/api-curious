@@ -1,4 +1,6 @@
 class GithubUser
+  attr_reader :attrs
+
   def initialize(attrs)
     @attrs = attrs
   end
@@ -13,10 +15,9 @@ class GithubUser
     GithubUser.new(raw_user)
   end
 
-  def username
-    "#{attrs[:login]}"
+  def self.followers(username, oauth_token)
+    GithubService.followers(username, oauth_token).map do |raw_follower|
+      GithubUser.new(raw_follower)
+    end
   end
-
-  # private
-    attr_reader :attrs
 end

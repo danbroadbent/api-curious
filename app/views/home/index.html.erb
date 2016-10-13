@@ -1,7 +1,7 @@
 <% if current_user %>
 <img src="<%= @user.attrs[:avatar_url] %>" alt="<%= @user.attrs[:name]%>'s Profile Image'" />
 <h2>Welcome <%= @user.attrs[:name] %></h2>
-<h3>Followers: <%= @user.attrs[:followers] %></h3>
+<h3><%= link_to "Followers", followers_path %>  <%= @user.attrs[:followers] %></h3>
 <h3>Following: <%= @user.attrs[:following] %></h3>
 <h3>Starred Repos: </h3>
 <% else %>

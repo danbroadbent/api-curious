@@ -23,7 +23,7 @@ describe "GithubService" do
     VCR.use_cassette("github_service github_followers") do
       current_user = create(:user)
       username = 'danbroadbent'
-      followers = GithubService.find_followers(username, current_user.oauth_token)
+      followers = GithubService.followers(username, current_user.oauth_token)
       expect(followers.count).to eq(2)
     end
   end
